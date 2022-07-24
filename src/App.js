@@ -4,6 +4,8 @@ import Login from "./templates/Login";
 import Main from "./templates/Main";
 import React, {useState} from 'react'
 import SubMain from './templates/SubMain';
+// 부트스트랩
+import Button from 'react-bootstrap/Button';
 
 function App() {
   const [loggedin, setLoggedIn] = React.useState(false);
@@ -19,7 +21,13 @@ function App() {
       <Header />
 
       {!loggedin && <Login />}
-      <button onClick={userLoggedIn}>로그인</button>
+      <Button 
+        onClick={userLoggedIn}
+        as="a" 
+        variant="dark"
+      >
+        로그인
+      </Button>
 
       {/* react-router */}
       {loggedin && <Main />}

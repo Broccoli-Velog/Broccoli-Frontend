@@ -1,9 +1,16 @@
-import React from "react";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-function MiddleBar(){
+function ResponsiveAutoExample() {
     return (
-        <div>MiddleBar</div>
-    )
+        <Container>
+            <Row xs="auto">
+                <Col>전체보기</Col>
+                {/* <Col>2 of 3</Col> */}
+            </Row>
+        </Container>
+    );
 }
 
-export default MiddleBar;
+export default ResponsiveAutoExample;
