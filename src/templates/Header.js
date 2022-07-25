@@ -6,14 +6,14 @@ function Header() {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand href="/" className='mx-2'>
                     🥦 Broccoli
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
                 </Nav>
-                <Nav>
+                <Nav className='mx-2'>
                     <Nav.Link href="/login">
                         Login
                     </Nav.Link>

@@ -1,9 +1,23 @@
-import React from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-function Login(){
+function Login() {
     return (
-        <div>로그인 페이지</div>
-    )
+        <Form>
+            <h3 className='mb-5'>로그인</h3>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>이메일</Form.Label>
+                <Form.Control type="email" placeholder="메일 주소를 입력하세요." />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="비밀번호를 입력하세요." />
+            </Form.Group>
+            <Button variant="dark" type="submit">
+                로그인
+            </Button>
+        </Form>
+    );
 }
 
 export default Login;

@@ -1,12 +1,12 @@
 import React from "react";
-import GetPost from "./GetPost";
+import Page from "./Page";
 import NewPost from "./NewPost";
 
-function SubMain(){
+const SubMain=(props)=>{
     return (
         <>
             <div>글</div>
-            <GetPost />
+            <Page />
             <NewPost />
         </>
     )

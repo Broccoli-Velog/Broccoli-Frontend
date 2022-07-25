@@ -1,38 +1,35 @@
 import './App.css';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+
 import Header from './templates/Header'
 import Login from "./templates/Login";
+import Register from "./templates/Register";
 import Main from "./templates/Main";
-import React, {useState} from 'react'
-import SubMain from './templates/SubMain';
+import Page from './templates/Page';
+import NotFound from './templates/NotFound';
 // 부트스트랩
-import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 
 function App() {
-  const [loggedin, setLoggedIn] = React.useState(false);
-  const [flag, setFlag] = React.useState("main");
-
-  const userLoggedIn=()=>{
-    setLoggedIn(true);
-  }
+  // const [loggedin, setLoggedIn] = React.useState(false);
+  // const userLoggedIn=()=>{
+  //   setLoggedIn(true);
+  // }
 
   return (
     <div className="App">
-
       <Header />
 
-      {!loggedin && <Login />}
-      <Button 
-        onClick={userLoggedIn}
-        as="a" 
-        variant="dark"
-      >
-        로그인
-      </Button>
-
-      {/* react-router */}
-      {loggedin && <Main />}
-      {loggedin && <SubMain />}
-
+      <Container className='mt-3'>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/" component={Main} exact />
+          <Route path="/page/:pageId" component={Page} />
+          <Route component={NotFound} />
+        </Switch>
+      </Container>
     </div>
   );
 }
