@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-function BasicExample() {
+function Register() {
     return (
         <Form>
             <h3 className='mb-5'>회원가입</h3>
@@ -28,4 +28,4 @@ function BasicExample() {
     );
 }
 
-export default BasicExample;
+export default Register;
