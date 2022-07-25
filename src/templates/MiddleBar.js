@@ -11,11 +11,11 @@ const MiddleBar=(props)=>{
                         전체보기
                     </a>
                 </Col>
-                {/* <Col className='pb-2 pt-2'>
-                    <a href="/">
-                        안 전체보기
+                <Col className='ms-auto pb-2 pt-2' sytle={{color: 'red'}}>
+                    <a href="/newPost">
+                        글 쓰기
                     </a>
-                </Col> */}
+                </Col>
             </Row>
         </Container>
     );

@@ -7,6 +7,7 @@ import Login from "./templates/Login";
 import Register from "./templates/Register";
 import Main from "./templates/Main";
 import Page from './templates/Page';
+import NewPost from './templates/NewPost';
 import NotFound from './templates/NotFound';
 // 부트스트랩
 import Container from 'react-bootstrap/Container';
@@ -27,6 +28,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/" component={Main} exact />
           <Route path="/page/:pageId" component={Page} />
+          <Route path="/newPost" component={NewPost} />
           <Route component={NotFound} />
         </Switch>
       </Container>
