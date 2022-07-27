@@ -1,10 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import './style.css'
 
 export default function MiddleBar(props){
     return (
-        <Container className='mb-4'>
+        <Container className='mt-2 mb-4'>
             <Row xs="auto">
                 <Col className='pb-2 pt-2'>
                     <a href="/">
@@ -12,7 +13,7 @@ export default function MiddleBar(props){
                     </a>
                 </Col>
                 <Col className='ms-auto pb-2 pt-2' sytle={{color: 'red'}}>
-                    <a href="/post">
+                    <a href="/note">
                         글 쓰기
                     </a>
                 </Col>

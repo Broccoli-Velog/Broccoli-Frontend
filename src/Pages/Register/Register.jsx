@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 export default function Register() {
     return (
         <Form>
-            <h3 className='mb-5'>회원가입</h3>
+            <h3 className='mt-5 mb-4 title'>회원가입</h3>
             <Form.Group className="mb-3" controlId="email">
                 <Form.Label>이메일</Form.Label>
                 <Form.Control type="email" name="email" placeholder="메일 주소를 입력하세요." />
@@ -21,9 +21,11 @@ export default function Register() {
                 <Form.Label>비밀번호 확인</Form.Label>
                 <Form.Control type="password" name="passwordConfirm" placeholder="비밀번호를 입력하세요." />
             </Form.Group>
-            <Button className='mt-5' variant="dark" type="submit">
-                로그인
-            </Button>
+            <div className="button-box">
+                <Button className='mt-5' variant="dark" type="submit">
+                    로그인
+                </Button>
+            </div>
         </Form>
     );
 }

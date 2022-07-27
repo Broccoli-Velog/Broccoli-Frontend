@@ -1,0 +1,11 @@
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.button-box {
+    text-align: center;
+    padding-top: 2em;
+}
+form input {
+    font-size: 0.8em !important;
+}

@@ -1,0 +1,12 @@
+.card-container {
+    padding: 0 10px;
+    width: 100%;
+}
+.card {
+    cursor: pointer;
+    transition: all .2s;
+    overflow: hidden;
+}
+.col .card:hover {
+    box-shadow: 1px 4px 5px rgb(216, 223, 216) !important;
+}
