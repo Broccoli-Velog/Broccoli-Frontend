@@ -1,14 +1,11 @@
-import React from "react";
 import {useHistory} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
-const Page=(props)=>{
+export default function NotFound(props){
     const history=useHistory();
     return (
         <>
-            <h3>Page</h3>
-            <div className="mb-5">게시글</div>
-
+            <h1 className="mb-4">404</h1>
             <Button 
             variant="dark"
             style={{color: "#aaa"}}
@@ -21,5 +18,3 @@ const Page=(props)=>{
         </>
     )
 }
-
-export default Page;

@@ -1,9 +1,7 @@
-import React from "react";
-import Editor from "./Editor";
-
+import Editor from "../../components/ToastEditor/ToastEditor";
 import Form from 'react-bootstrap/Form';
 
-const NewPost=(props)=>{
+export default function NewPost(props){
     return (
         <Form>
             <h3 className="mb-3">NewPost</h3>
@@ -11,5 +9,3 @@ const NewPost=(props)=>{
         </Form>
     )
 }
-
-export default NewPost;

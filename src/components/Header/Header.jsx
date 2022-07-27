@@ -2,7 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function Header() {
+export default function Header() {
     return (
         <Navbar collapseOnSelect expand="lg">
             <Container>
@@ -26,5 +26,3 @@ function Header() {
         </Navbar>
     );
 }
-
-export default Header;

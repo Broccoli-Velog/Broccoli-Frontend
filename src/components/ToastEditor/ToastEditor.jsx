@@ -1,11 +1,11 @@
 import '@toast-ui/editor/dist/toastui-editor.css';
 import { Editor } from '@toast-ui/react-editor';
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 
-const PostEditor = () => {
+export default function PostEditor(){
     const history=useHistory();
 
     // const editorRef = React.useRef(null)
@@ -47,5 +47,3 @@ const PostEditor = () => {
         </>
     )
 };
-
-export default PostEditor;
