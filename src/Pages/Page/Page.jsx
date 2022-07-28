@@ -6,15 +6,37 @@ import NoteList from '../NoteList/NoteList'
 import Detail from '../Detail/Detail'
 import NewNote from '../NewNote/NewNote'
 
-export default function Page(){
+export default function Page(props){
     return (
         <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/note/:title" component={Detail} exact />
-            <Route path="/note" component={NewNote} exact />
-            <Route path="/" component={NoteList} exact />
-            <Route component={NotFound} />
+            <Route 
+                path="/login" 
+                component={Login} 
+                userToggle={props.userToggle}
+            />
+            <Route 
+                path="/register" 
+                component={Register} 
+                userToggle={props.userToggle}
+            />
+            <Route 
+                path="/note/:title" 
+                component={Detail} 
+                exact 
+            />
+            <Route 
+                path="/note" 
+                component={NewNote} 
+                exact 
+            />
+            <Route 
+                path="/" 
+                component={NoteList} 
+                exact 
+            />
+            <Route 
+                component={NotFound} 
+            />
         </Switch>
     )
 }
