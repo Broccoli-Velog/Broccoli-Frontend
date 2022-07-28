@@ -4,9 +4,11 @@ import Container from 'react-bootstrap/Container';
 
 export default function Layout(){
     return (
-        <Container>
+        <>
             <Header />
-            <Page />
-        </Container>
+            <Container className="no-padding">
+                <Page />
+            </Container>
+        </>
     )
 }

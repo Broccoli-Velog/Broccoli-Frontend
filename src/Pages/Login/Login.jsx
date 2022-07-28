@@ -4,7 +4,7 @@ import './style.css'
 
 export default function Login() {
     return (
-        <Form>
+        <Form className='form-login'>
             <h3 className='mt-5 mb-5 title'>로그인</h3>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>이메일</Form.Label>

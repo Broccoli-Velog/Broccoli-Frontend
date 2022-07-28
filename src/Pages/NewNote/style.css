@@ -1,3 +1,9 @@
 .title, .btn-box {
     text-align: center;
 }
+.toastui-editor-md-container {
+    background-color: #fff;
+}
+.toastui-editor-defaultUI {
+    box-shadow: 0 5px 8px rgba(55, 55, 55, 0.1);
+}

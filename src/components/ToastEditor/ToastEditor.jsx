@@ -20,7 +20,7 @@ export default function PostEditor(){
             <Editor
                 initialValue="## 게시글을 작성하세요🥦"
                 previewStyle="vertical"
-                height="70vh"
+                height="60vh"
                 initialEditType="markdown"
                 useCommandShortcut={true}
                 // onChange={textSaved}

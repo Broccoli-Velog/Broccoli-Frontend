@@ -5,14 +5,14 @@ import './style.css'
 
 export default function MiddleBar(props){
     return (
-        <Container className='mt-2 mb-4'>
+        <Container className='mt-2 mb-2 middle-bar'>
             <Row xs="auto">
                 <Col className='pb-2 pt-2'>
                     <a href="/">
                         전체보기
                     </a>
                 </Col>
-                <Col className='ms-auto pb-2 pt-2' sytle={{color: 'red'}}>
+                <Col className='ms-auto pb-2 pt-2'>
                     <a href="/note">
                         글 쓰기
                     </a>

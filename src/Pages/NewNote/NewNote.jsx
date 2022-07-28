@@ -5,7 +5,7 @@ import './style.css'
 export default function NewPost(props){
     return (
         <Form className="row">
-            <h3 className="mb-3 title">New Note</h3>
+            <h3 className="my-4 title">New Note</h3>
             <Editor />
         </Form>
     )

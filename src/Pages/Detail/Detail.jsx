@@ -1,11 +1,13 @@
 import {useHistory} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
-export default function NotFound(props){
+export default function Note(props){
     const history=useHistory();
     return (
         <div className='text-center mt-5'>
-            <h1 className="mb-4">404</h1>
+            <h3>Note</h3>
+            <div className="mb-5">게시글</div>
+
             <Button 
             variant="dark"
             style={{color: "#aaa"}}

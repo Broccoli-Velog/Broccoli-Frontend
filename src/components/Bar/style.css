@@ -2,3 +2,11 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+a:hover {
+    color: rgb(132, 198, 133)
+}
+
+.middle-bar {
+    color: rgba(0, 0, 0, .7)
+}

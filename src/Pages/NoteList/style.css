@@ -1,5 +1,4 @@
 .card-container {
-    padding: 0 10px;
     width: 100%;
 }
 .card {
@@ -8,5 +7,6 @@
     overflow: hidden;
 }
 .col .card:hover {
-    box-shadow: 1px 4px 5px rgb(216, 223, 216) !important;
+    box-shadow: 1px 4px 5px rgb(193, 200, 193) !important;
+    transform: translateY(-2px);
 }

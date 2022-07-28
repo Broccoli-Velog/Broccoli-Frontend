@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.logo {
+    font-family: 'Uchen', serif;
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+.navbar .svg-circle {
+    width: 24px;
+    height: 24px;
+    background-color: rgb(132, 198, 133);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg path {
+    fill: #fff;
+}
+
+.navbar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #333;
+}
+
+.navbar a:hover {    
+    color: rgb(132, 198, 133)
+}
+
+.navbar .nav-link:last-child {
+    padding-right: 0;
+}
+
+.navbar .container {
+    box-sizing: border-box;
+}
