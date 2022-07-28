@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './style.css'
 
-export default function Login() {
+export default function Login(props) {
     return (
         <Form className='form-login'>
             <h3 className='mt-5 mb-5 title'>로그인</h3>
