@@ -2,10 +2,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import './style.css'
-import { faRightFromBracket, faRightToBracket, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Header() {
+export default function Header(props) {
+    const user=props.user
     return (
         <Navbar className='shadow-sm'>
             <Container>
@@ -13,6 +14,8 @@ export default function Header() {
                 🥦 Broccoli
             </Navbar.Brand>
             <Nav className="ms-auto">
+
+                {!user &&
                 <Nav.Link href="/login">
                     <span className="svg-circle">
                         <FontAwesomeIcon 
@@ -23,7 +26,13 @@ export default function Header() {
                         Login
                     </span>
                 </Nav.Link>
-                <Nav.Link href="/logout">
+                }
+                
+                {user && 
+                <Nav.Link 
+                // href="/logout" 
+                onClick={()=>props.userToggle(user)}
+                >
                     <span className="svg-circle">
                         <FontAwesomeIcon 
                         icon={faRightFromBracket}
@@ -33,6 +42,8 @@ export default function Header() {
                         Logout
                     </span>
                 </Nav.Link>
+                }
+
                 <Nav.Link href="/register">
                     Register
                 </Nav.Link>

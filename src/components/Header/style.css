@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+nav {
+    background-color: #fdfcf8;
+}
+
 .logo {
     font-family: 'Uchen', serif;
     font-family: 'Noto Serif', serif;
