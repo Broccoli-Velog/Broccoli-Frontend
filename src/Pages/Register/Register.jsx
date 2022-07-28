@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 export default function Register() {
     return (
-        <Form>
+        <Form className='form-register'>
             <h3 className='mt-5 mb-4 title'>회원가입</h3>
             <Form.Group className="mb-3" controlId="email">
                 <Form.Label>이메일</Form.Label>

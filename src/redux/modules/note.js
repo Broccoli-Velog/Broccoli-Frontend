@@ -15,7 +15,31 @@ const initialNote = [
         "series": '시리즈',
         "createdAt": '0000-00-00',
         "updatedAt": '0000-00-00'
-    }
+    },
+    {
+        "author": '작성자',
+        "title": '노트 제목3', 
+        "context": '노트의 내용3',
+        "series": '시리즈',
+        "createdAt": '0000-00-00',
+        "updatedAt": '0000-00-00'
+    },
+    {
+        "author": '작성자',
+        "title": '노트 제목4', 
+        "context": '노트의 내용4',
+        "series": '시리즈',
+        "createdAt": '0000-00-00',
+        "updatedAt": '0000-00-00'
+    },
+    {
+        "author": '작성자',
+        "title": '노트 제목5', 
+        "context": '노트의 내용5',
+        "series": '시리즈',
+        "createdAt": '0000-00-00',
+        "updatedAt": '0000-00-00'
+    },
 ]
 
 export function createNote(note) {
