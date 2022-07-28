@@ -1,6 +1,6 @@
-import Header from "../Header/Header"
-import Page from "../../Pages/Page/Page"
-import Bar from "../Bar/Bar"
+import Header from "../../components/Header/Header"
+import Page from "../Router/Router"
+import Bar from "../../components/Bar/Bar"
 import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
 import { useState } from "react";
@@ -24,7 +24,7 @@ export default function Layout(){
             <Container className="no-padding">
                 <Page />
             </Container>
-            <button onClick={()=>userToggle(user)}>
+            <button onClick={() => userToggle(user)}>
                 temp
             </button>
         </>

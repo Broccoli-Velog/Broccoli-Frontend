@@ -2,7 +2,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import './style.css'
-import { faRightFromBracket, faRightToBracket, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Header(props) {
@@ -31,7 +31,7 @@ export default function Header(props) {
                 {user && 
                 <Nav.Link 
                 // href="/logout" 
-                onClick={props.userToggle}
+                onClick={()=>props.userToggle(user)}
                 >
                     <span className="svg-circle">
                         <FontAwesomeIcon 
