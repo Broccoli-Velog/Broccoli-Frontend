@@ -1,9 +1,10 @@
 // const userState = 'user/state';
 // const init = false;
-
 // export function createNote(login) {
 // 	return { type: userState, login };
 // }
+
+
 
 // // Reducer
 // export default function reducer(state = initialNote, action = {}) {
