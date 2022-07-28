@@ -1,6 +1,10 @@
 import Card from 'react-bootstrap/Card';
 import {useHistory} from 'react-router-dom'
 
+const lodash=(str)=>{
+    return str.split(" ").join("-")
+}
+
 export default function Note(props){
     const history=useHistory();
     const {id, note} = props
@@ -9,7 +13,7 @@ export default function Note(props){
         <Card
         className="shadow-sm"
         onClick={()=>{
-            history.push('/note/'+_.title)
+            history.push('/note/'+lodash(_.title))
         }}>
             <Card.Img variant="top" src="" style={{ backgroundColor: "#ccc", height: "160px"}} />
             <Card.Body>
