@@ -1,18 +1,39 @@
-// const userState = 'user/state';
-// const init = false;
-// export function createNote(login) {
-// 	return { type: userState, login };
-// }
+const LOGIN = "user/LOGIN"
+const REGISTER = "user/REGISTER";
 
+const initialState = {}
 
+export function loginUser(user){
+    return {type: LOGIN, user};
+  }
+  
+  export function registerUser (user){
+      return {type: REGISTER, user};
+  }
 
-// // Reducer
-// export default function reducer(state = initialNote, action = {}) {
-// 	switch (action.type) {
-// 	case 'note/CREATE': {
-//         const new_note_list = [...initialNote, action.note];
-//         return new_note_list;
-//     }
-// 	default: return state;
-// 	}
-// }
+  export const loginFB = () => {
+    return async function (dispatch) {
+
+        dispatch(loginUser());
+    }
+  }
+
+  export const registerFB = (user) => {
+    return async function (dispatch) {
+
+      dispatch(registerUser());
+    }
+  }
+
+  export default function reducer(state = initialState, action = {}) {
+    switch (action.type) {
+      case "user/LOGIN": {
+        return state;
+      }
+      case "user/REGISTER": {
+          return state;
+      }
+      default:
+        return state;
+    }
+  }
