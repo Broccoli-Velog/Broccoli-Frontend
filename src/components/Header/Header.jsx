@@ -5,8 +5,9 @@ import './style.css'
 import { faRightFromBracket, faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Header(props) {
-    const user=props.user
+export default function Header() {
+    const user=true;
+
     return (
         <Navbar className='shadow-sm'>
             <Container>
@@ -16,7 +17,8 @@ export default function Header(props) {
             <Nav className="ms-auto">
 
                 {!user &&
-                <Nav.Link href="/login">
+                <>
+                <Nav.Link to="/login">
                     <span className="svg-circle">
                         <FontAwesomeIcon 
                         icon={faRightToBracket}
@@ -26,13 +28,15 @@ export default function Header(props) {
                         Login
                     </span>
                 </Nav.Link>
+                
+                <Nav.Link href="/register">
+                    Register
+                </Nav.Link>
+                </>
                 }
                 
                 {user && 
-                <Nav.Link 
-                // href="/logout" 
-                onClick={()=>props.userToggle(user)}
-                >
+                <Nav.Link to="/login">
                     <span className="svg-circle">
                         <FontAwesomeIcon 
                         icon={faRightFromBracket}
@@ -44,9 +48,6 @@ export default function Header(props) {
                 </Nav.Link>
                 }
 
-                <Nav.Link href="/register">
-                    Register
-                </Nav.Link>
             </Nav>
             </Container>
         </Navbar>
