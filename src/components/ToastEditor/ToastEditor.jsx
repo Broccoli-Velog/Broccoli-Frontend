@@ -8,12 +8,17 @@ import Button from 'react-bootstrap/Button'
 export default function PostEditor(){
     const history=useHistory();
 
-    // const editorRef = React.useRef(null)
+    const editorRef = React.useRef(null)
     // const [editorText, setEditorText] = useState(""); 
     // function textSaved(e){
-    //     // const newText=e.target.value;
-    //     console.log(e) // markdown
+        // const newText=e.target.value;
+        // console.log(e) // markdown
     // }
+    function submitHandler(event) {
+        event.preventDefault()
+        console.log(editorRef.current?.getInstance().getHTML())
+        console.log(editorRef.current?.getInstance().getMarkdown())
+    }
 
     return (     
         <>   
@@ -23,6 +28,7 @@ export default function PostEditor(){
                 height="60vh"
                 initialEditType="markdown"
                 useCommandShortcut={true}
+                ref={editorRef}
                 // onChange={textSaved}
             />
 
@@ -40,7 +46,9 @@ export default function PostEditor(){
                 className="shadow mx-2" 
                 variant="dark"
                 type="submit"
+                onClick={submitHandler}
                 >
+                
                     작성완료
                 </Button>
             </div>
