@@ -46,7 +46,7 @@ export default function Login(props) {
             <Form className='form-register'>
 
                 <h3 className='mt-5 mb-4 title'>
-                    {temp ? "회원가입" : "로그인"}
+                    로그인
                 </h3>
 
                 <Form.Group 
@@ -66,24 +66,6 @@ export default function Login(props) {
                     />
                 </Form.Group>
 
-                { temp &&
-                <Form.Group 
-                className="mb-3">
-                    <Form.Label>
-                        이름
-                    </Form.Label>
-                    <Form.Control 
-                    type="nickname" 
-                    name="nickname" 
-                    placeholder="이름을 입력하세요."
-                    ref={nameRef}
-                    onChange={()=>characterCheck(nameRef)}
-                    required
-                    maxLength={10}
-                />
-                </Form.Group>
-                }
-
                 <Form.Group 
                 className="mb-3"
                 >
@@ -102,25 +84,6 @@ export default function Login(props) {
                     />
                 </Form.Group>
 
-                { temp &&
-                <Form.Group 
-                className="mb-3"
-                >
-                    <Form.Label>
-                        비밀번호 확인
-                    </Form.Label>
-                    <Form.Control 
-                    type="password"
-                    placeholder="비밀번호를 입력하세요."
-                    ref={pwRef2}
-                    minLength={8}
-                    maxLength={30}
-                    required
-                    onBlur={()=>isPasswordSame(pwRef2)}
-                    />
-                </Form.Group>
-                }
-
                 <div className="button-box">
                     <Button 
                     className='mt-5' 
@@ -128,7 +91,7 @@ export default function Login(props) {
                     type="submit" 
                     onClick={props.userToggle}
                     >
-                        {temp ? "회원가입" : "로그인"}
+                        로그인
                     </Button>
                 </div>
             </Form>
