@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import styled from 'styled-components'
+import Comment from '../../components/Comment/Comment'
 
 export default function Note() {
     const history = useHistory();
@@ -16,6 +17,8 @@ export default function Note() {
         <Author><h4>{note.author}</h4></Author>
         <hr/>
         <Context>{note.context}</Context>
+        <hr style={{margin: 0}} />
+        <Comment />
         <Button variant="dark" style={{color: "#aaa"}} onClick={() => {history.goBack();}}>뒤로 가기</Button>
       </Container>
   );
@@ -35,5 +38,5 @@ const Context = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
+  min-height: 35vh;
 `
