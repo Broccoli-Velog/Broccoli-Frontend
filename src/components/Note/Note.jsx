@@ -15,16 +15,15 @@ export default function Note(props){
         onClick={()=>{
             history.push('/note/'+lodash(_.title))
         }}>
-            <Card.Img variant="top" src="" style={{ backgroundColor: "#ccc", height: "160px"}} />
             <Card.Body>
                 <Card.Title>{_.title}</Card.Title>
                 <Card.Text>
-                    {_.context}
+                    {_.context.length > 50 ? _.context.splice(0, 49) : _.context}
                 </Card.Text>
                 <Card.Text 
                 className="pt-2" 
                 style={{color: "#aaa", display: "flex", justifyContent: "space-between", borderTop: '1px solid #ddd'}}>
-                    <span>{_.createdAt}</span>
+                    <span>{_.author}</span>
                 </Card.Text>
             </Card.Body>
         </Card>
