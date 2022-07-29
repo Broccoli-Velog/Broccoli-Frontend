@@ -1,32 +1,20 @@
 import Header from "../../components/Header/Header"
 import Page from "../Router/Router"
-import Bar from "../../components/Bar/Bar"
 import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import MiddleBar from "../../components/Bar/Bar";
 
 export default function Layout(){
-    const [user, setUser]=useState(false) // redux로 교체
-    const history = useHistory();
-    const userToggle=(user)=>{
-        setUser(!user)
-        history.push('/')
-    }
-
     return (
         <>
             <Sticky>
-                <Header user={user} userToggle={userToggle}/>
-                <Bar user={user} />
+                <Header/>
+                <MiddleBar/>
             </Sticky>
 
             <Container className="no-padding">
                 <Page />
             </Container>
-            <button onClick={() => userToggle(user)}>
-                temp
-            </button>
         </>
     )
 }

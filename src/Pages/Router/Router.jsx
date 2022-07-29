@@ -12,12 +12,10 @@ export default function Page(props){
             <Route 
                 path="/login" 
                 component={Login} 
-                userToggle={props.userToggle}
             />
             <Route 
                 path="/register" 
-                component={Register} 
-                userToggle={props.userToggle}
+                component={Login} 
             />
             <Route 
                 path="/note/:title" 

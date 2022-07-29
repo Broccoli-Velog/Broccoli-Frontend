@@ -18,7 +18,7 @@ export default function Note(props){
             <Card.Body>
                 <Card.Title>{_.title}</Card.Title>
                 <Card.Text>
-                    {_.context.length > 50 ? _.context.splice(0, 49) : _.context}
+                    {_.content.length > 50 ? _.content.splice(0, 49) : _.content}
                 </Card.Text>
                 <Card.Text 
                 className="pt-2" 
