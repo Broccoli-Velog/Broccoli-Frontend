@@ -2,12 +2,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './style.css'
 import React from 'react';
+import {useDispatch} from 'react-redux'
+import { registerUser } from '../../redux/modules/user';
 
 export default function Register(props) {
     let emailRef = React.useRef(null);
     let nameRef = React.useRef(null);
     let pwRef = React.useRef(null);
     let pwRef2 = React.useRef(null);
+    const dispatch = useDispatch()
 
     const characterCheck=(obj)=>{
         let regExp;
@@ -23,7 +26,6 @@ export default function Register(props) {
     }
 
     const isPassword=(obj)=>{
-        console.log(obj.current.value)
         var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,30}$/;
         if(obj.current.value.length>1 && !regExp.test(obj.current.value)){
             obj.current.focus();
@@ -38,6 +40,16 @@ export default function Register(props) {
             pwRef2.current.value = "";
             alert('비밀번호를 확인해주세요.');
         }
+    }
+
+    function submitHandler(event) {
+        event.preventDefault()
+        const newUser = {
+            email: emailRef.current.value,
+            nickname: nameRef.current.value,
+            password: pwRef2.current.value
+        }
+        dispatch(registerUser(newUser))        
     }
 
     return (
@@ -121,7 +133,7 @@ export default function Register(props) {
                     className='mt-5' 
                     variant="dark" 
                     type="submit" 
-                    onClick={props.userToggle}
+                    onClick={submitHandler}
                     >
                         회원가입
                     </Button>
