@@ -15,10 +15,15 @@ export default function Note() {
       <Container className='text-center'>
         <Title><h1>{note.title}</h1></Title>
         <Author><h4>{note.author}</h4></Author>
+
         <hr/>
+
         <Context>{note.context}</Context>
+
         <hr style={{margin: 0}} />
-        <Comment />
+
+        <Comment note_id={note.note_id} />
+
         <Button variant="dark" style={{color: "#aaa"}} onClick={() => {history.goBack();}}>뒤로 가기</Button>
       </Container>
   );

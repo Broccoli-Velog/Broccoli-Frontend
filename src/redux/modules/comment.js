@@ -11,6 +11,11 @@ const initialComment = [
         author: '작성자',
         content: '코멘트',
         createdAt: '0000-00-00'
+    },
+    {
+        author: '작성자',
+        content: '코멘트',
+        createdAt: '0000-00-00'
     }
 ]
 
