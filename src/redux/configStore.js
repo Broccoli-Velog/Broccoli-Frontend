@@ -7,7 +7,7 @@ import thunk from "redux-thunk"
 
 const middlewares = [thunk];
 const rootReducer = combineReducers({note, user});
-const enhancer = applyMiddleware(...middlewares); // 걍 thunk 적어도됨
+const enhancer = applyMiddleware(...middlewares)
 
 const store = createStore(rootReducer, enhancer);
 

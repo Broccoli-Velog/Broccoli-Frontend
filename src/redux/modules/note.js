@@ -3,7 +3,7 @@ const initialNote = [
     {
         "author": '작성자',
         "title": '노트 제목1', 
-        "context": <div>노트의 내용1</div>,
+        "content": <div>노트의 내용1</div>,
         "series": '시리즈',
         "createdAt": '0000-00-00',
         "updatedAt": '0000-00-00'
