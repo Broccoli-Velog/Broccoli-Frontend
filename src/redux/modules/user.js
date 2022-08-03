@@ -1,18 +1,47 @@
-// const userState = 'user/state';
-// const init = false;
-// export function createNote(login) {
-// 	return { type: userState, login };
-// }
+import Axios from "axios";
 
+const LOGIN = "user/LOGIN";
+const REGISTER = "user/REGISTER";
 
+const initialState = {}
 
-// // Reducer
-// export default function reducer(state = initialNote, action = {}) {
-// 	switch (action.type) {
-// 	case 'note/CREATE': {
-//         const new_note_list = [...initialNote, action.note];
-//         return new_note_list;
-//     }
-// 	default: return state;
-// 	}
-// }
+export function loginAction(user){
+    return {type: LOGIN, user};
+}
+  
+export function registerAction (user){
+    return {type: REGISTER, user};
+}
+
+export const loginUser = () => {
+    return async function (dispatch) {
+    dispatch(loginUser());
+    }
+}
+
+export const registerUser = (user) => {
+    console.log(user)
+    return async function (dispatch) {
+    try {
+        let test = await Axios.post("/register", user)
+        // let test = await Axios.get("https://jsonplaceholder.typicode.com/users")
+        console.log(test.data)
+    }
+    catch(e) {
+        console.log(e)
+    }
+    }
+}
+
+  export default function reducer(state = initialState, action = {}) {
+    switch (action.type) {
+      case "user/LOGIN": {
+        return state;
+      }
+      case "user/REGISTER": {
+          return state;
+      }
+      default:
+        return state;
+    }
+  }
