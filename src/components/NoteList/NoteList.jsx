@@ -8,6 +8,7 @@ import './style.css'
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import axios from "axios";
 
 export default function NoteList(props){
     const note=useSelector((state)=>state.note)
@@ -20,7 +21,7 @@ export default function NoteList(props){
     const getItems = useCallback(async () => {
         setLoading(true)
         setItems(prevState => {
-        console.log(prevState);
+        // console.log(prevState);
         return [...prevState, ...note]}
         )
         setLoading(false)

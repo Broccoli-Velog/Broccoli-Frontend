@@ -4,8 +4,10 @@ import './style.css'
 import React from 'react';
 import {useDispatch} from 'react-redux'
 import { registerUser } from '../../redux/modules/user';
+import { useHistory } from 'react-router-dom';
 
 export default function Register(props) {
+    let history = useHistory();
     let emailRef = React.useRef(null);
     let nameRef = React.useRef(null);
     let pwRef = React.useRef(null);
@@ -49,7 +51,8 @@ export default function Register(props) {
             nickname: nameRef.current.value,
             password: pwRef2.current.value
         }
-        dispatch(registerUser(newUser))        
+        dispatch(registerUser(newUser));    
+        history.push('/');
     }
 
     return (

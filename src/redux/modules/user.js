@@ -8,40 +8,48 @@ const initialState = {}
 export function loginAction(user){
     return {type: LOGIN, user};
 }
-  
+
 export function registerAction (user){
     return {type: REGISTER, user};
 }
 
-export const loginUser = () => {
-    return async function (dispatch) {
-    dispatch(loginUser());
-    }
+export const loginUser = (user) => {
+    console.log(user);
+
+    Axios.post('http://localhost:3000/auth/login', user)
+    .then(res=>{
+        const token = res.data.result.token;
+        localStorage.setItem('broccolis', token);
+    })
+    .catch(err=>{
+        console.log(err.response.data);
+    })
+    .finally(() => console.log('axios 실행'))
+
+    return {type: LOGIN, user}
 }
 
 export const registerUser = (user) => {
-    console.log(user)
-    return async function (dispatch) {
-    try {
-        let test = await Axios.post("/register", user)
-        // let test = await Axios.get("https://jsonplaceholder.typicode.com/users")
-        console.log(test.data)
-    }
-    catch(e) {
-        console.log(e)
-    }
-    }
+    console.log(user);
+
+    Axios.post('http://localhost:3000/auth/register', user).then(res=>console.log(res.data))
+    .catch(err=>{
+        console.log(err.response.data);
+    })
+    .finally(() => console.log('axios 실행'))
+
+    return {type: REGISTER, user}
 }
 
-  export default function reducer(state = initialState, action = {}) {
+export default function reducer(state = initialState, action = {}) {
     switch (action.type) {
-      case "user/LOGIN": {
+        case "user/LOGIN": {
         return state;
-      }
-      case "user/REGISTER": {
-          return state;
-      }
-      default:
+        }
+        case "user/REGISTER": {
+            return state;
+        }
+        default:
         return state;
     }
-  }
+}

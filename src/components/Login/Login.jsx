@@ -2,13 +2,26 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './style.css'
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { loginUser } from '../../redux/modules/user';
+import { useHistory } from 'react-router-dom';
 
 export default function Login(props) {
-    let temp = true;
+    let history = useHistory();
     let emailRef = React.useRef(null);
-    let nameRef = React.useRef(null);
     let pwRef = React.useRef(null);
-    let pwRef2 = React.useRef(null);
+    let dispatch = useDispatch();
+    
+    function submitHandler(event) {
+        event.preventDefault()
+        const newUser = {
+            email: emailRef.current.value,
+            password: pwRef.current.value
+        }
+        dispatch(loginUser(newUser))        
+        history.push('/')
+        console.log(localStorage.getItem('broccolis'))
+    }
 
     const characterCheck=(obj)=>{
         let regExp;
@@ -24,22 +37,14 @@ export default function Login(props) {
     }
 
     const isPassword=(obj)=>{
-        console.log(obj.current.value)
         var regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,30}$/;
         if(obj.current.value.length>1 && !regExp.test(obj.current.value)){
             obj.current.focus();
             obj.current.value = "";
-            alert('비밀번호는 영문과 숫자를 포함해주세요.');
+            alert('비밀번호는 영문과 숫자를 포함해서 8자 이상 입력해주세요.');
         }
     }
 
-    const isPasswordSame=()=>{
-        if(pwRef2.current.value.length>1 && pwRef.current.value!==pwRef2.current.value){
-            pwRef2.current.focus();
-            pwRef2.current.value = "";
-            alert('비밀번호를 확인해주세요.');
-        }
-    }
 
     return (
         <>
@@ -89,7 +94,7 @@ export default function Login(props) {
                     className='mt-5' 
                     variant="dark" 
                     type="submit" 
-                    onClick={props.userToggle}
+                    onClick={submitHandler}
                     >
                         로그인
                     </Button>

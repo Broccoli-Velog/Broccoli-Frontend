@@ -1,4 +1,5 @@
 import './App.css';
+import './axios/dbConnect';
 import Layout from './Pages/Layout/Layout';
 
 function App() {
